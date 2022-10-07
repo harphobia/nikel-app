@@ -18,6 +18,7 @@ class CreateCarsTable extends Migration
             $table->enum('type',['transport','goods']);
             $table->string('name');
             $table->string('plate_number');
+            $table->string('fuel');
             $table->boolean('in_use');
             $table->boolean('need_rapir')->nullable();
             $table->boolean('company_vehicle');

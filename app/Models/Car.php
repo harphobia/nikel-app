@@ -13,6 +13,7 @@ class Car extends Model
         'type',
         'name',
         'plate_number',
+        'fuel',
         'in_use',
         'need_rapir',
         'company_vehicle'
