@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('pages.login');
     }
 
     public function auth(Request $request)
@@ -25,6 +25,6 @@ class LoginController extends Controller
             "role" => $user->role
         ];
 
-        return redirect('dashboard')->withCookie(cookie('user-token', json_encode($payload)));
+        return redirect('dashboard')->withCookie(cookie('user_token', json_encode($payload)));
     }
 }

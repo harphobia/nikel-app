@@ -18,8 +18,11 @@ class CreateOrderRequestsTable extends Migration
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('driver_id');
             $table->unsignedBigInteger('acceptor_id');
+            $table->unsignedBigInteger('car_id');
+            $table->boolean('accepted');
             $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('driver_id')->references('id')->on('drivers')->onDelete('cascade');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
             $table->foreign('acceptor_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('note');
             $table->timestamps();

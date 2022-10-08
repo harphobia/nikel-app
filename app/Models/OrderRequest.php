@@ -12,7 +12,9 @@ class OrderRequest extends Model
     protected $fillable = [
         'admin_id',
         'driver_id',
+        'car_id',
         'acceptor_id',
         'note',
+        'accepted'
     ];
 }

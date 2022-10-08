@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AcceptorController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,9 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
+    dd($request->cookie());
     return redirect('/login');
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('loginpage');
 Route::post('/auth', [LoginController::class, 'auth'])->name('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::resource('/order', OrderController::class)->only(['index', 'store']);
+Route::resource('/acceptor', AcceptorController::class)->only(['index', 'update']);

@@ -17,6 +17,8 @@ class OrderRequestFactory extends Factory
             'admin_id' => $this->faker->randomDigitNotNull(),
             'driver_id' => $this->faker->randomDigitNotNull(),
             'acceptor_id' => $this->faker->randomDigitNotNull(),
+            'car_id' => $this->faker->randomDigitNotNull(),
+            'accepted' => $this->faker->boolean(),
             'note' => $this->faker->word(),
         ];
     }
